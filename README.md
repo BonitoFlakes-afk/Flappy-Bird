@@ -1,18 +1,48 @@
-## Getting Started
+# Flappy Bird (Java Swing)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A classic Flappy Bird game clone built from scratch using Java's Swing library for the GUI.
 
-## Folder Structure
+## About The Project
 
-The workspace contains two folders by default, where:
+This project is a 2D arcade-style game where the player controls a bird, attempting to fly between columns of green pipes without hitting them. It was built as a fun exercise to practice Java GUI programming, game loop mechanics, and event handling.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Features
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+* Classic "flap" mechanic using the **Spacebar**.
+* Dynamic, randomly generated pipes.
+* Real-time score tracking.
+* Collision detection.
+* "Game Over" and "Restart" functionality.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Built With
 
-## Dependency Management
+* **Java**
+* **Java Swing** (for the `JFrame`, `JPanel`, and `Timer`)
+* **Java AWT** (for `Graphics`, `Font`, and event listeners like `KeyListener`)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Key Concepts Demonstrated
+
+* **Game Loop:** A `javax.swing.Timer` running at 60 FPS (1000/60) handles game ticks.
+* **Event Handling:** `KeyListener` detects the `VK_SPACE` key press to make the bird "flap".
+* **2D Graphics Rendering:** All game elements are drawn using `paintComponent` on a `JPanel`.
+* **OOP:** `Bird` and `Pipe` inner classes are used to manage object state and properties.
+* **Collision Detection:** A simple bounding-box algorithm checks for overlap between the bird and pipes.
+* **Game State Management:** A `boolean gameOver` controls the flow of the game, stopping the loops and allowing for a restart.
+
+## How to Run
+
+1.  Ensure you have a Java Development Kit (JDK) installed.
+2.  Clone the repository.
+3.  Place the following image files in the same directory as the code:
+    * `flappybirdbg.png`
+    * `flappybird.png`
+    * `toppipe.png`
+    * `bottompipe.png`
+4.  Compile the Java files:
+    ```bash
+    javac App.java FlappyBird.java
+    ```
+5.  Run the application:
+    ```bash
+    java App
+    ```
